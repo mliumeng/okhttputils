@@ -2,7 +2,7 @@ package com.zhy.sample_okhttp;
 
 public class User {
 
-	public String username ; 
+	public String name ;
 	public String password  ;
 	
 	public User() {
@@ -10,7 +10,7 @@ public class User {
 	}
 	
 	public User(String username, String password) {
-		this.username = username;
+		this.name = username;
 		this.password = password;
 	}
 
@@ -18,7 +18,7 @@ public class User {
 	public String toString()
 	{
 		return "User{" +
-				"username='" + username + '\'' +
+				"username='" + name + '\'' +
 				", password='" + password + '\'' +
 				'}';
 	}

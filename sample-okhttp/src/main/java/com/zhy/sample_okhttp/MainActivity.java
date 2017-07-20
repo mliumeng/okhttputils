@@ -118,12 +118,11 @@ public class MainActivity extends AppCompatActivity
 
     public void postString(View view)
     {
-        String url = mBaseUrl + "user!postString";
+        String url = "http://192.168.1.65:8081/SPMVC/hello";
         OkHttpUtils
-                .postString()
+                .post()
                 .url(url)
-                .mediaType(MediaType.parse("application/json; charset=utf-8"))
-                .content(new Gson().toJson(new User("zhy", "123")))
+                .addParams("name","lllliuuum")
                 .build()
                 .execute(new MyStringCallback());
 
@@ -168,7 +167,7 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onResponse(User response, int id)
                     {
-                        mTv.setText("onResponse:" + response.username);
+                        mTv.setText("onResponse:" + response.name);
                     }
                 });
     }
